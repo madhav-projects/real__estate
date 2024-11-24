@@ -19,6 +19,8 @@
             height: 100vh;
             position: fixed;
             padding-top: 132px;
+            flex-direction: column; 
+            align-items: center;   
         }
         .sidebar h2 {
     text-align: center;
@@ -30,17 +32,26 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 1.8em;
     font-weight: bold;
+    width: 99%;
     border: 3px solid #ffd000; /* Golden border */
 }
 
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            transition: background 0.3s;
-        }
+     .sidebar a {
+    display: flex;              /* Use flexbox for links */
+    justify-content: center;    /* Center text horizontally */
+    align-items: center;        /* Center text vertically */
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;                 /* Make links uniform */
+    text-align: center;
+    margin-bottom: 10px;        /* Add spacing between links */
+    border: 4px solid transparent; /* Transparent border for alignment */
+    border-radius: 10px;        /* Rounded edges */
+    transition: background 0.3s, border 0.3s;
+    border-bottom: 2px solid #ffd000; 
+}
+
         .sidebar a:hover {
             background-color: #575757;
         }

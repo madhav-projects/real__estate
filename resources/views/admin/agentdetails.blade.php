@@ -68,19 +68,19 @@
     /* transform: scale(1.05);  */
 }
 
-        .table-section {
+.table-section {
     position: relative;
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     overflow-x: auto;
-    margin-top: -540px; /* Remove the negative margin */
-    max-width: calc(99% - 254px); /* Adjust width to allow space for the sidebar */
+    max-width: calc(104% - 308px);
     margin-left: auto;
+    /* margin-right: auto; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-in-out;
-   
+    margin-top: -660px;
 }
 
 .table-section table {
@@ -99,9 +99,7 @@
     white-space: nowrap; /* Prevents wrapping of table content */
 }
 
-.table-section th {
-    background-color: #3c2626;
-}
+
 
 .table-section tbody tr:nth-child(even) {
     background-color: #f9f9f9;

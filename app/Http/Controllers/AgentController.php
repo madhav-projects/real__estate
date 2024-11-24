@@ -305,8 +305,10 @@ public function showGeneratePage($id)
 // PropertyController.phppublic function saveProperty(Request $request)
 public function saveProperty(Request $request)
 {
-    // Retrieve data from the request
+    // Create a new instance of Generate
     $property = new Generate();
+
+    // Retrieve data from the request
     $property->company_name = $request->input('company_name');
     $property->agent_name = $request->input('agent_name');
     $property->price = $request->input('price');
@@ -314,6 +316,12 @@ public function saveProperty(Request $request)
     $property->company_share = $request->input('company_share');
     $property->agent_share = $request->input('agent_share');
     $property->user_share = $request->input('user_share');
+
+    // Assign foreign keys
+    $property->user_id = auth()->id(); // Assuming the user is logged in
+    $property->company_id = $request->input('company_id');
+    $property->agent_id = $request->input('agent_id');
+    $property->admin_id = $request->input('admin_id');
 
     // Save to the database and send response
     if ($property->save()) {

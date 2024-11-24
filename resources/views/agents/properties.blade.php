@@ -260,26 +260,25 @@
             border-radius: 10px;
             filter: blur(5px);
         }
-        .content {
-    margin-left: 250px;
-    padding: 20px;
-    flex-grow: 1;
-    text-align: center;   /* Center-align text */
-    font-weight: bold;    /* Make text bold */
+        .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 169vh;
 }
 
 .property-details-heading {
-    font-weight: bold;         /* Makes the text bold */
-    text-align: center;        /* Centers the text */
-    font-size: 24px;           /* Increases the font size */
-    position: relative;        /* Change from fixed to relative */
-    top: 0;                    /* Reset the top position */
-    left: 50%;                 /* Centers the heading horizontally */
-    transform: translateX(-50%); /* Adjusts the centering to account for width */
-   
-    width: 100%;               /* Optional: Makes the heading full width */
-    margin-top: 20px;          /* Add margin to move it down from the top if needed */
-    padding: 15px;             /* Add padding (adjust the value as needed) */
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin-top: -222px;
+    padding: 15px;
 }
 .hero_area {
     display: flex;
@@ -288,25 +287,39 @@
 }
 
 .container {
-    background-image: url('/images/bgagent.png'); /* Set the background image on the container */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative; /* To position the overlay */
     display: flex;
-    justify-content: center; /* Center the form within the container */
+    justify-content: center; /* Center the form horizontally */
     align-items: center; /* Center vertically */
     height: 115vh; /* Full screen height */
 }
 
+.container::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bgagent.png'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Ensure it stays behind other elements */
+    opacity: 0.8; /* Optional: Add a slight opacity for a subtle effect */
+}
+
 .form-container {
-    flex: 1;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
-    margin-top: 60px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 171px;
+    margin-top: 440px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Full width */
+    width: 82%;
 }
+
 
 
 .form-section {

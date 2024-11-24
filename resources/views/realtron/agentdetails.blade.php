@@ -213,24 +213,31 @@ body::before {
 
 .container {
     max-width: 1258px;
-    margin: auto;
+    margin: 0 auto; /* Ensure centered horizontally */
+    padding-top: 0; /* Remove padding from the top */
 }
 
 .centered-header {
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
-    color: white;
-    margin-bottom: 20px;
-    padding: 20px;
+    font-size: 34px;
+    color: black;
+    margin-bottom: -29px; /* Reduced margin below the header */
+    padding: 45px; /* Reduced padding */
 }
 
+
 .table-section {
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px;
+   
+    margin-top: 0; /* Remove any top margin */
+    
     overflow-x: auto;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-height: 500px; /* Set a maximum height for the table section */
+   /* Optional: Add a border for better visibility */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
+
 
 .table-section .table {
     width: 100%;
@@ -238,15 +245,15 @@ body::before {
 }
 
 .table-section th, .table-section td {
-    padding: 12px;
+    padding: 5px;
     text-align: left;
     color: #333;
     border: 1px solid #ddd;
 }
 
 .table-section th {
-    background-color: #3c2626;
-    color: white;
+    background-color: #b3933a;
+    color: black;
     font-weight: bold;
 }
 

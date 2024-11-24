@@ -68,6 +68,7 @@
                     </div>
                     <div class="btn-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary ms-2" id="cancelButton">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -75,6 +76,7 @@
     </div>
     </div>
 
+    
     <!-- Additional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybDo/Vv9Q9KZI6ERrTVEU2p2UZB+0FE1uNXpEs89F5auLk3Ng" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-qP29cPJJyw5nXHqP4AoLR8S6Y08H1aKuxRaPsoxC5Qw5T24B4rF/fT2zVl95W2dG" crossorigin="anonymous"></script>
@@ -168,6 +170,21 @@
             });
         });
     });
+
+    $(document).ready(function () {
+    // Cancel button click event
+    $('#cancelButton').on('click', function () {
+        // Hide the form section
+        $('#newUserRequestFormSection').hide();
+
+        // Reset form fields
+        $('#newUserRequestForm')[0].reset();
+
+        // Clear the selected agent display text
+        $('#selectedAgentDisplay').text('');
+    });
+});
+
     </script>
     <style>
        /* Main container and layout adjustments */
@@ -200,6 +217,17 @@ body::before {
     filter: blur(8px); /* Adjust the blur level as desired */
     z-index: -1; /* Ensure the blurred background stays behind the content */
 }
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
 
 .hero_area {
     width: 100%;
@@ -224,11 +252,14 @@ body::before {
 }
 
 .table-section th {
-    background-color: #3c2626;
-    color: white;
+    background-color: #b3933a;
+    color: black;
     padding: 12px;
     text-align: left;
     white-space: nowrap;
+}
+.table-section th, .table-section td {
+    border: 1px solid #ddd; /* Adds borders between columns */
 }
 
 .table-section td {
@@ -249,8 +280,8 @@ body::before {
 .centered-header {
     text-align: center;
     font-weight: bold;
-    font-size: 23px;
-    color: white;
+    font-size: 34px;
+    color: black;
     margin-bottom: 11px;
     padding-top: 57px;
 }
@@ -258,13 +289,26 @@ body::before {
 /* Form section styling */
 .form-section {
     display: none;
-    margin-top: 20px;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 10px; /* Reduced padding */
+    width: 70%; /* Adjusted width */
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+
+    /* Centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.form-control {
+    padding: 6px 8px; /* Reduced padding inside input fields */
+    font-size: 14px; /* Optional: reduce font size */
+}
+
 
 .form-label {
     font-weight: bold;
@@ -274,7 +318,7 @@ body::before {
 #selectedAgentDisplay {
     text-align: center;
     font-weight: bold;
-    color: #4CAF50;
+    color: black;
     margin-bottom: 20px;
 }
 

@@ -215,17 +215,25 @@
        
          max-width: 1266px;
       }
-      .search_section{
-         position: relative;
-         top: -400px;
-         left: -10px;
-         width: 630px;
-         margin: 0 auto;
-         background: rgba(0, 0, 0, 0.5);
-         padding: 20px;
-         color: #fff;
-         text-align: center;
-      }
+      .search_section {
+    position: absolute; /* Initially fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    width: 630px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: top 0.3s ease; /* Smooth transition for movement */
+}
+.scrolled .search_section {
+    position: absolute; /* Change to absolute when scrolling past */
+    top: 20px; /* Move up when scrolling */
+    transform: translateX(-50%); /* Only center horizontally */
+}
       
    </style>
 </head>
@@ -293,6 +301,20 @@
          </div>
       </div>
       </div>
+
+      <script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        const searchSection = document.querySelector('.search_section');
+        const scrollThreshold = 200; // Adjust the scroll threshold as needed
+        
+        if (window.scrollY > scrollThreshold) {
+            searchSection.classList.add('scrolled');
+        } else {
+            searchSection.classList.remove('scrolled');
+        }
+    });
+</script>
 
    <!-- About Us Section -->
    <section id="about">

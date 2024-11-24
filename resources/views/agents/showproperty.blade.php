@@ -188,40 +188,56 @@
 </html>
 <style>
     body {
-            padding-top: 60px;
-            font-family: Arial, sans-serif;
-            background-image: url('images/bgagent.png'); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
+        font-family: Arial, sans-serif;
+        background-image: url('images/bgagent.png'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
 
-.hero_area {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: inherit;
+        background-size: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+        background-attachment: inherit;
+        filter: blur(8px); /* Adjust blur intensity as needed */
+        z-index: -1;
+    }
 
-.container {
-           
-            padding: 30px;
-            border-radius: 8px;
-            max-width:1324 px;
-            width: 100%;
-            
-        }
+    .hero_area {
+        z-index: 1; /* Ensures content is above the blurred background */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container {
+        position: relative;
+        padding: 30px;
+        border-radius: 8px;
+       
+        max-width: 1324px;
+        width: 100%;
+    }
 
 .table-container {
     overflow-x: auto; /* Allows horizontal scroll if needed */
-    margin: 90px -68px; /* Adjusted for proper spacing */
+    margin: 90px -99px; /* Adjusted for proper spacing */
     width: 100%; /* Full width to avoid overlap */
 }
 
@@ -243,7 +259,7 @@
 }
 
 .table-section th {
-    background-color: #f2f2f2;
+    background-color: #b3933a;
 }
 
 .table-section tbody tr:nth-child(even) {

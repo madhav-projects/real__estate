@@ -42,7 +42,7 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
-    transition: all 0.3s ease; /* Animation effect */
+    
 }
 
 /* Style for search button */
@@ -54,7 +54,7 @@
     color: white;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation effect */
+    
 }
 
 /* Hover effects */
@@ -71,37 +71,40 @@
 
 
 
+
+.table-section tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+
 .table-section table {
     width: 100%;
-    max-width: 100%; /* Ensures table doesn't exceed the container's width */
+    max-width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    margin-left: auto; /* Centers the table horizontally */
-    margin-right: auto; /* Centers the table horizontally */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .table-section th, .table-section td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    white-space: nowrap; /* Prevents wrapping of table content */
+    white-space: nowrap;
 }
 
 .table-section th {
     background-color: #3c2626;
+    color: white;
 }
 
 .table-section tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-.table-section tbody tr {
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease;
-}
 
 .table-section tbody tr:hover {
-    background-color: #d1e8ff; /* Row highlight on hover */
-    cursor: pointer;
+    background-color: #f1f1f1;
 }
 
 .table-section button {
@@ -129,6 +132,14 @@
 .table-section button:hover {
     opacity: 0.8;
 }
+
+
+
+
+
+
+
+
 
 
         .container-fluid {
@@ -281,15 +292,15 @@ $("#searchButton").click(function() {
     position: relative;
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     overflow-x: auto;
-    margin-top: -511px; /* Remove the negative margin */
-    max-width: calc(101% - 278px); /* Adjust width to allow space for the sidebar */
+    max-width: calc(104% - 308px);
     margin-left: auto;
+    /* margin-right: auto; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-in-out;
-   
+    margin-top: -660px;
 }
 .home-image {
             max-width: 100%;
@@ -413,7 +424,7 @@ $("#searchButton").click(function() {
     color: white;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
-    transition: background-color 0.3s ease;
+    
 }
 .table-section th:hover {
     background-color: #2980b9;

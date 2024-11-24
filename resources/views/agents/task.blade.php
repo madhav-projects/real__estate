@@ -9,30 +9,45 @@
     <style>
         /* Full-page background image */
         body {
-            padding-top: 60px;
-            font-family: Arial, sans-serif;
-            background-image: url('images/bgagent.png'); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    padding-top: 60px;
+    font-family: Arial, sans-serif;
+    background-image: url('images/bgagent.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    background-attachment: inherit;
+    filter: blur(8px); /* Adjust blur intensity as needed */
+    z-index: -1; /* Ensure this layer stays behind the content */
+}
 
         /* Centered container with translucent background for readability */
         .container {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 30px;
-            border-radius: 8px;
-            max-width: px;
-            width: 100%;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-        }
-
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -49,7 +64,7 @@
 
      
             th {
-              background-color: #3c2626;
+              background-color: #b3933a;
               color: white;
                }
 
